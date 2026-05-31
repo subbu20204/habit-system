@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# habit-system
 
-## Getting Started
+A personal habit tracking system with AI-powered weekly reflections.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Stack
+
+- **Next.js** (App Router) + TypeScript
+- **SCSS Modules** — no Tailwind
+- **Vercel** — deployment
+
+---
+
+## Project Structure
+
+```
+src/
+├── app/          # routes only, no logic
+├── components/   # ui/ and layout/
+├── styles/       # _variables, _mixins, _typography
+├── lib/          # prisma client, api helpers
+├── hooks/        # custom react hooks
+├── types/        # typescript interfaces
+└── utils/        # pure functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Branching
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+main  →  production (auto-deploys to Vercel)
+dev   →  integration branch
+feat/ →  feature branches off dev
+fix/  →  bugfix branches off dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+PRs go into `dev`. `dev` merges into `main` when stable.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Commit Conventions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+feat:      new feature
+fix:       bug fix
+chore:     tooling, deps, config
+style:     visual/scss changes
+refactor:  code restructure, no behaviour change
+docs:      readme, comments
+```
+
+---
+
+## Versioning
+
+Auto-tagged on every merge to `main` via GitHub Actions.
+
+| Commit prefix | Version bump          |
+|---------------|-----------------------|
+| `feat:`       | minor `v0.1` → `v0.2` |
+| `fix:`        | patch `v0.1.0` → `v0.1.1` |
+| `chore:`      | no bump               |
+
+---

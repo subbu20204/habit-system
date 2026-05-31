@@ -1,0 +1,13 @@
+@use '@/styles/variables' as *;
+@use '@/styles/typography';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: $color-bg;
+  min-height: 100vh;
+}
