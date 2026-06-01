@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getLatestVersion } from "@/lib/version";
-import { Badge } from "@/components/ui/Badge/Badge";
+import { Badge } from "@/components";
 import styles from "./layout.module.scss";
 import "./globals.scss";
 
